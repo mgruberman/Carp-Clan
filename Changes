@@ -13,6 +13,11 @@
 Version history:
 ----------------
 
+Version 5.10  10.01.2008
+ + Removed the circular dependency on Object::Deadly. It was only
+   used for testing and would only succeed if you already had O::D
+   installed.
+
 Version 5.9   04.11.2007
  + Test::Exceptions is mandatory for testing.
  + Fixed http://rt.cpan.org/Ticket/Display.html?id=26255.

@@ -28,7 +28,7 @@ $MaxArgNums = 8;     # How many arguments to print.        0 = all.
 
 $Verbose = 0;        # If true then make _shortmsg call _longmsg instead.
 
-$VERSION = '5.9';
+$VERSION = '5.10';
 
 # _longmsg() crawls all the way up the stack reporting on all the function
 # calls made. The error string, $error, is originally constructed from the
@@ -102,7 +102,7 @@ sub _longmsg {
                 $sub .= '(' . join( ', ', @parms ) . ')';
             }
             if ( $msg eq '' ) { $msg = "$sub called"; }
-            else { $msg .= "\t$sub called"; }
+            else              { $msg .= "\t$sub called"; }
         }
         else {
             if   ( $sub =~ /::/ ) { $msg = "$sub(): $error"; }
