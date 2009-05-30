@@ -1,14 +1,18 @@
                      ====================================
-                       Package "Carp::Clan" Version 5.1
+                       Package "Carp::Clan" Version 5.2
                      ====================================
 
 
-                  Copyright (c) 2001 - 2003 by Steffen Beyer.
+                  Copyright (c) 2001 - 2004 by Steffen Beyer.
                              All rights reserved.
 
 
 Version history:
 ----------------
+
+Version 5.2   11.04.2004
+
+ +  Added the original test scripts from Date::Calc and Bit::Vector
 
 Version 5.1   19.08.2003
 

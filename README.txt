@@ -1,5 +1,5 @@
                      ====================================
-                       Package "Carp::Clan" Version 5.1
+                       Package "Carp::Clan" Version 5.2
                      ====================================
 
 
@@ -31,7 +31,7 @@ Legal issues:
 
 This package with all its parts is
 
-Copyright (c) 2001 - 2003 by Steffen Beyer.
+Copyright (c) 2001 - 2004 by Steffen Beyer.
 All rights reserved.
 
 This package is free software; you can use, modify and redistribute
