@@ -28,7 +28,7 @@ $MaxArgNums = 8;     # How many arguments to print.        0 = all.
 
 $Verbose = 0;        # If true then make _shortmsg call _longmsg instead.
 
-$VERSION = '5.8';
+$VERSION = '5.9';
 
 # _longmsg() crawls all the way up the stack reporting on all the function
 # calls made. The error string, $error, is originally constructed from the
@@ -62,8 +62,8 @@ sub _longmsg {
                     =~ s/([\x00-\x1F\x7F-\xFF])/sprintf("\\x%02X",ord($1))/eg;
                 substr( $eval, $MaxEvalLen ) = '...'
                     if ( $MaxEvalLen && length($eval) > $MaxEvalLen );
-                if ($require) { $sub = "require $eval"; }
-                else { $sub = "eval '$eval'"; }
+                if   ($require) { $sub = "require $eval"; }
+                else            { $sub = "eval '$eval'"; }
             }
             elsif ( $sub eq '(eval)' ) { $sub = 'eval {...}'; }
             else {
@@ -105,8 +105,8 @@ sub _longmsg {
             else { $msg .= "\t$sub called"; }
         }
         else {
-            if ( $sub =~ /::/ ) { $msg = "$sub(): $error"; }
-            else { $msg = "$sub: $error"; }
+            if   ( $sub =~ /::/ ) { $msg = "$sub(): $error"; }
+            else                  { $msg = "$sub: $error"; }
         }
         $msg .= " at $file line $line\n" unless ( $error =~ /\n$/ );
         $error = '';
@@ -135,7 +135,7 @@ sub _shortmsg {
         next if ( $pack eq 'Carp::Clan' or $pack =~ /$pattern/ );
         if ( $error eq '' ) { $msg = "$sub() called"; }
         elsif ( $sub =~ /::/ ) { $msg = "$sub(): $error"; }
-        else { $msg = "$sub: $error"; }
+        else                   { $msg = "$sub: $error"; }
         $msg .= " at $file line $line\n" unless ( $error =~ /\n$/ );
         $msg =~ tr/\0//d
             ;    # Circumvent die's incorrect handling of NUL characters
@@ -190,7 +190,7 @@ sub import {
             }
         }
         elsif ( $item =~ /^verbose$/i ) { $verbose = 1; }
-        else { $pattern = $item; }
+        else                            { $pattern = $item; }
     }
 
    # Speed up pattern matching in Perl versions >= 5.005:

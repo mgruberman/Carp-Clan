@@ -1,8 +1,14 @@
-# http://module-build.sourceforge.net/META-spec.html
-name:         Carp-Clan
-version:      5.8
-license: perl
-installdirs:  site
-distribution_type: module
-no_index:
-  DB: 1
+--- #YAML:1.0
+name:                Carp-Clan
+version:             5.9
+abstract:            Report errors from perspective of caller of a "clan" of modules
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.31
+distribution_type:   module
+requires:     
+    Test::Exception:               0
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2
+author:
+    - Joshua ben Jore <jjore@cpan.org>
