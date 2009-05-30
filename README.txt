@@ -1,5 +1,5 @@
                      ====================================
-                       Package "Carp::Clan" Version 5.4
+                       Package "Carp::Clan" Version 5.5
                      ====================================
 
 Abstract:

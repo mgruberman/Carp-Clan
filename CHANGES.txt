@@ -1,5 +1,5 @@
 		 ====================================
-		   Package "Carp::Clan" Version 5.4
+		   Package "Carp::Clan" Version 5.5
 		 ====================================
 
              Copyright (c) 2006 by Joshua ben Jore
@@ -12,6 +12,11 @@
 
 Version history:
 ----------------
+
+Version 5.5   02.10.2006
+ +  Change 01_..._carp.t to use Object::Deadly only if it is 0.08+
+ +  Changed wording of the O::D request in Makefile.PL
+ +  Allowed everything to be perltidied.
 
 Version 5.4   23.09.2006
  +  Made Carp::Clan safe for overloaded objects.
