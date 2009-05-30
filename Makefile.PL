@@ -13,9 +13,9 @@ if (prompt( 'Add Object::Deadly 0.08+ to prerequisites for testing? [Ny]',
 
 WriteMakefile(
     NAME          => 'Carp::Clan',
-    VERSION_FROM  => 'Clan.pm',
+    VERSION_FROM  => 'lib/Carp/Clan.pm',
     PREREQ_PM     => { %PREREQ_PM, },
-    ABSTRACT_FROM => 'Clan.pod',
+    ABSTRACT_FROM => 'lib/Carp/Clan.pod',
     AUTHOR        => 'Joshua ben Jore <jjore@cpan.org>',
     dist          => { COMPRESS => 'gzip -9', SUFFIX => 'gz', },
     clean => { FILES => 'Carp-Clan-*', },

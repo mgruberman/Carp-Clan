@@ -1,11 +1,14 @@
 Artistic.txt
-CHANGES.txt
-Clan.pm
-Clan.pod
+Changes
 GNU_GPL.txt
+lib/Carp/Clan.pm
+lib/Carp/Clan.pod
 Makefile.PL
 MANIFEST			This list of files
 META.yml
-README.txt
-t/00____version.t
-t/01_______carp.t
+README
+t/01pod.t
+t/03yaml.t
+t/04boilerplate.t
+t/10basic.t
+t/11basic.t
