@@ -1,7 +1,7 @@
 #!perl -w
 
 use strict;
-use Test::More tests => 3;
+use Test::More tests => 2;
 
 # ======================================================================
 #   $version = $Carp::Clan::VERSION;
@@ -26,5 +26,3 @@ SKIP: {
         'No errors importing'
     );
 }
-
-is( Carp::Clan->VERSION, '5.7', 'version' );

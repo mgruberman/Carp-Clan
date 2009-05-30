@@ -1,6 +1,6 @@
 # http://module-build.sourceforge.net/META-spec.html
 name:         Carp-Clan
-version:      5.7
+version:      5.8
 license: perl
 installdirs:  site
 distribution_type: module
