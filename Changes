@@ -2,7 +2,7 @@
 			 Package "Carp::Clan"
 		 ====================================
 
-             Copyright (c) 2006-2007 by Joshua ben Jore
+             Copyright (c) 2006-2008 by Joshua ben Jore
 			 All rights reserved.
 
 	     Copyright (c) 2001 - 2004 by Steffen Beyer.
@@ -12,6 +12,10 @@
 
 Version history:
 ----------------
+
+Version 6.00  17.02.2008
+ + Oops. Fixed version number. '5.10' is less than '5.9'. I thought
+   CPAN would handle this but apparently not..
 
 Version 5.10  10.01.2008
  + Removed the circular dependency on Object::Deadly. It was only

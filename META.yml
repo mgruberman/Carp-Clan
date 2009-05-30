@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Carp-Clan
-version:             5.10
+version:             6.00
 abstract:            Report errors from perspective of caller of a "clan" of modules
 license:             ~
 author:              

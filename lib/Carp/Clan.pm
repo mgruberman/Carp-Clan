@@ -28,7 +28,7 @@ $MaxArgNums = 8;     # How many arguments to print.        0 = all.
 
 $Verbose = 0;        # If true then make _shortmsg call _longmsg instead.
 
-$VERSION = '5.10';
+$VERSION = '6.00';
 
 # _longmsg() crawls all the way up the stack reporting on all the function
 # calls made. The error string, $error, is originally constructed from the
