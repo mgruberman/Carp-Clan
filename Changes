@@ -1,5 +1,5 @@
 		 ====================================
-		   Package "Carp::Clan" Version 5.5
+		   Package "Carp::Clan" Version 5.6
 		 ====================================
 
              Copyright (c) 2006 by Joshua ben Jore
@@ -12,6 +12,23 @@
 
 Version history:
 ----------------
+
+Version 5.6   02.10.2006
+
+ +  Fixed test to predefined croak/confess/cluck/carp functions don't
+    break tests.
+ +  Use Object::Deadly even saner.
+ +  Use named lexicals in diag().
+ +  Skip testing import of carp/croak/cluck/confess if they existed
+    prior to loading Carp::Clan.
+ +  Use exists &foo/defined &foo instead of symbol table hackery.
+ +  Remove all the symbol table hackery that had notes about avoiding
+    symrefs. That's dumb. It's better to be clear and have symrefs
+    than have unreadble code w/o symrefs.
+ +  Remove gratituous & sigil on function calls.
+ +  Changed f() so it accepts 1st parameter of carp/cluck/confess/croak
+    instead of 1/2/3/4.
+ +  Renamed files.
 
 Version 5.5   02.10.2006
  +  Change 01_..._carp.t to use Object::Deadly only if it is 0.08+

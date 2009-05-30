@@ -28,7 +28,7 @@ $MaxArgNums = 8;     # How many arguments to print.        0 = all.
 
 $Verbose = 0;        # If true then make _shortmsg call _longmsg instead.
 
-$VERSION = '5.5';
+$VERSION = '5.6';
 
 # _longmsg() crawls all the way up the stack reporting on all the function
 # calls made. The error string, $error, is originally constructed from the
@@ -83,7 +83,7 @@ sub _longmsg {
                                 $_ = overload::StrVal($_);
                             }
                             else {
-                                unless (/^-?\d+(?:\.\d+(?:[eE][+-]\d+)?)?$/
+                                unless ( /^-?\d+(?:\.\d+(?:[eE][+-]\d+)?)?$/
                                     )    # Looks numeric
                                 {
                                     s/([\\\'])/\\$1/g;    # Escape \ and '
