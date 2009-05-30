@@ -1,29 +1,19 @@
-#!perl -w
-
-###############################################################################
-##                                                                           ##
-##    Copyright (c) 2001 - 2004 by Steffen Beyer.                            ##
-##    All rights reserved.                                                   ##
-##                                                                           ##
-##    This package is free software; you can redistribute it                 ##
-##    and/or modify it under the same terms as Perl itself.                  ##
-##                                                                           ##
-###############################################################################
+#!perl
 
 use strict;
-
 use ExtUtils::MakeMaker;
+my @PREREQ_PM;
+
+if ( prompt( 'Use Object::Deadly for tests? [Ny]', 'no' ) =~ /\Ay/imx ) {
+    push @PREREQ_PM, ( 'Object::Deadly' => '0.08' );
+}
 
 WriteMakefile(
-    'NAME'              => 'Carp::Clan',
-    'VERSION_FROM'      => 'Clan.pm',
-#   ($] >= 5.005 ?
-#       ('ABSTRACT'     => 'Report errors from perspective of caller of a "clan" of modules',
-#        'AUTHOR'       => 'Steffen Beyer (sb@engelschall.com)') : ()),
-#   ($] >= 5.005 && $^O eq 'MSWin32' && $Config{archname} =~ /-object\b/i ?
-#       ('CAPI'         => 'TRUE') : ()),
-    'dist'              => { COMPRESS => "gzip -9", SUFFIX => "gz" }
+    NAME          => 'Carp::Clan',
+    VERSION_FROM  => 'Clan.pm',
+    PREREQ_PM     => { @PREREQ_PM, },
+    ABSTRACT_FROM => 'Clan.pod',
+    AUTHOR        => 'Joshua ben Jore <jjore@cpan.org>',
+    dist          => { COMPRESS => 'gzip -9', SUFFIX => 'gz', },
+    clean => { FILES => 'Carp-Clan-*', },
 );
-
-__END__
-

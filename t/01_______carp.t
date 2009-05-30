@@ -2,6 +2,14 @@
 
 use strict;
 
+my $USE_OBJECT_DEADLY;
+BEGIN {
+    eval { require Object::Deadly; };
+    if ( not $@ ) {
+        $USE_OBJECT_DEADLY = 1;
+    }
+}
+
 # ======================================================================
 #   use Carp::Clan qw(package::pattern);
 #   croak();
@@ -13,7 +21,15 @@ use strict;
 # NOTE: Certain ugly contortions needed only for crappy Perl 5.6.0!
 # (sorry for the outbreak :-) )
 
-print "1..58\n";
+sub diag {
+    use overload;
+    local $_ = join ' ', map { overload::StrVal( $_ ) } @_;
+    s/^/# /mg;
+    print;
+    return;
+}
+
+print "1..59\n";
 
 my $n = 1;
 
@@ -550,6 +566,34 @@ if ($@ =~ /\bClUcKiNg\ at\ .+\n
          .*\bA::a\(4,\ 'ClUcKiNg'\)\ called\ at\ .+\n
          .*\b(?:eval\ {\.\.\.}|require\ 0)\ called\ at\ /x)
 {print "ok $n\n";} else {print "not ok $n\n";}
+$n++;
+
+if ( $USE_OBJECT_DEADLY ) {
+    # Test that objects with overloading in the call stack don't have
+    # their overloading triggered.
+    eval {
+        package Elsewhere;
+        use Carp::Clan;
+        sub{
+            sub{
+                confess('here');
+            }->();
+        }->(Object::Deadly->new( 'RIP' ));
+    };
+    if ($@ =~ /\A  Carp::Clan::__ANON__\(\):\ here\ .+\n
+               \s+ Elsewhere::__ANON__\(\)\ called\ .+\n
+               \s+ Elsewhere::__ANON__\(Object::Deadly .+\n
+               \s+ eval/x) {
+        print "ok $n\n";
+    }
+    else {
+        diag( $@ );
+        print "not ok $n\n";
+    }
+}
+else {
+    print "ok $n # skip Object::Deadly not installed\n";
+}
 $n++;
 
 __END__

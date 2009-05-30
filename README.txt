@@ -1,16 +1,6 @@
                      ====================================
-                       Package "Carp::Clan" Version 5.3
+                       Package "Carp::Clan" Version 5.4
                      ====================================
-
-
-This package is available for download either from my web site at
-
-                  http://www.engelschall.com/u/sb/download/
-
-or from any CPAN (= "Comprehensive Perl Archive Network") mirror server:
-
-               http://www.perl.com/CPAN/authors/id/S/ST/STBEY/
-
 
 Abstract:
 ---------
@@ -24,22 +14,6 @@ which shall never be blamed for any error. :-)
 So these modules stick together like a "clan" and any error which
 occurs will be blamed on the "outsider" script or modules not belonging
 to this "clan".
-
-
-Legal issues:
--------------
-
-This package with all its parts is
-
-Copyright (c) 2001 - 2004 by Steffen Beyer.
-All rights reserved.
-
-This package is free software; you can use, modify and redistribute
-it under the same terms as Perl itself, i.e., under the terms of
-the "Artistic License" or the "GNU General Public License".
-
-Please refer to the files "Artistic.txt" and "GNU_GPL.txt"
-in this distribution, respectively, for details!
 
 
 Prerequisites:

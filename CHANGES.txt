@@ -1,14 +1,22 @@
-                     ====================================
-                       Package "Carp::Clan" Version 5.3
-                     ====================================
+		 ====================================
+		   Package "Carp::Clan" Version 5.4
+		 ====================================
 
+             Copyright (c) 2006 by Joshua ben Jore
+			 All rights reserved.
 
-                  Copyright (c) 2001 - 2004 by Steffen Beyer.
-                             All rights reserved.
+	     Copyright (c) 2001 - 2004 by Steffen Beyer.
+			 All rights reserved.
+				   
 
 
 Version history:
 ----------------
+
+Version 5.4   23.09.2006
+ +  Made Carp::Clan safe for overloaded objects.
+ +  Added diag() to 01_..._carp.t
+ +  Release by JJORE
 
 Version 5.3   30.04.2004
 

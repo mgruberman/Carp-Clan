@@ -15,6 +15,7 @@ package Carp::Clan;
 
 use strict;
 use vars qw( $MaxEvalLen $MaxArgLen $MaxArgNums $Verbose $VERSION );
+use overload ();
 
 # Original comments by Andy Wardley <abw@kfs.org> 09-Apr-1998.
 
@@ -27,7 +28,7 @@ $MaxArgNums =  8;   # How many arguments to print.        0 = all.
 
 $Verbose = 0;       # If true then make _shortmsg call _longmsg instead.
 
-$VERSION = '5.3';
+$VERSION = '5.4';
 
 # _longmsg() crawls all the way up the stack reporting on all the function
 # calls made. The error string, $error, is originally constructed from the
@@ -38,7 +39,6 @@ $VERSION = '5.3';
 sub _longmsg
 {
     return(@_) if (ref $_[0]);
-    local $^W = 0; # For cases when overloaded stringify returns undef
     local $_;      # Protect surrounding program - just in case...
     my($pack,$file,$line,$sub,$hargs,$eval,$require,@parms,$push);
     my $error = join('', @_);
@@ -77,7 +77,7 @@ sub _longmsg
                         {
                             if (ref $_)
                             {
-                                $_ = "$_"; # Beware of overloaded objects!
+                                $_ = overload::StrVal( $_ );
                             }
                             else
                             {

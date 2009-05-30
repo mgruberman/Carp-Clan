@@ -4,7 +4,8 @@ Clan.pm
 Clan.pod
 GNU_GPL.txt
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
+META.yml
 README.txt
 t/00____version.t
 t/01_______carp.t
