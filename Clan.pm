@@ -27,7 +27,7 @@ $MaxArgNums =  8;   # How many arguments to print.        0 = all.
 
 $Verbose = 0;       # If true then make _shortmsg call _longmsg instead.
 
-$VERSION = '5.2';
+$VERSION = '5.3';
 
 # _longmsg() crawls all the way up the stack reporting on all the function
 # calls made. The error string, $error, is originally constructed from the
@@ -208,11 +208,14 @@ sub import
         $@ =~ s/\s+at\s.+$//;
         die _shortmsg('^:::', 0, $@);
     }
-    no strict "refs";
-    *{"${callpkg}::croak"}   = sub { die  _shortmsg($pattern, $verbose, @_); };
-    *{"${callpkg}::confess"} = sub { die  _longmsg (                    @_); };
-    *{"${callpkg}::carp"}    = sub { warn _shortmsg($pattern, $verbose, @_); };
-    *{"${callpkg}::cluck"}   = sub { warn _longmsg (                    @_); };
+    {
+        local($^W) = 0;
+        no strict "refs";
+        *{"${callpkg}::croak"}   = sub { die  _shortmsg($pattern, $verbose, @_); };
+        *{"${callpkg}::confess"} = sub { die  _longmsg (                    @_); };
+        *{"${callpkg}::carp"}    = sub { warn _shortmsg($pattern, $verbose, @_); };
+        *{"${callpkg}::cluck"}   = sub { warn _longmsg (                    @_); };
+    }
 }
 
 1;

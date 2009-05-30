@@ -1,5 +1,5 @@
                      ====================================
-                       Package "Carp::Clan" Version 5.2
+                       Package "Carp::Clan" Version 5.3
                      ====================================
 
 
@@ -57,11 +57,8 @@ As usual:
 
     perl Makefile.PL
     make
+    make test
     make install
-
-(Currently no tests are defined here.
-See Date::Calc and Bit::Vector instead
-where this module is used and tested.)
 
 
 Changes over previous versions:

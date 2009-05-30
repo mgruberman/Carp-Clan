@@ -1,5 +1,5 @@
                      ====================================
-                       Package "Carp::Clan" Version 5.2
+                       Package "Carp::Clan" Version 5.3
                      ====================================
 
 
@@ -9,6 +9,11 @@
 
 Version history:
 ----------------
+
+Version 5.3   30.04.2004
+
+ +  Removed the paragraph saying "no tests available" from README.txt
+ +  Changed Clan.pm in order to suppress "subroutine redefined" warnings
 
 Version 5.2   11.04.2004
 
