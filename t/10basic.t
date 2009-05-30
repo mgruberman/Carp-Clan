@@ -27,4 +27,4 @@ SKIP: {
     );
 }
 
-is( Carp::Clan->VERSION, '5.6', 'version' );
+is( Carp::Clan->VERSION, '5.7', 'version' );

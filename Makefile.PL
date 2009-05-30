@@ -17,6 +17,7 @@ WriteMakefile(
     VERSION_FROM  => 'lib/Carp/Clan.pm',
     ABSTRACT_FROM => 'lib/Carp/Clan.pod',
     PREREQ_PM     => { %PREREQ_PM, },
+    NO_META       => 1,
     dist          => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Carp-Clan-*', },
 );

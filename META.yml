@@ -1,10 +1,8 @@
 # http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         Carp-Clan
-version:      5.6
-version_from: lib/Carp/Clan.pm
+version:      5.7
+license: perl
 installdirs:  site
-requires:
-
 distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30
+no_index:
+  DB: 1
